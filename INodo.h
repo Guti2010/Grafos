@@ -1,5 +1,6 @@
-#ifndef _INODO_
-#define _INODO_ 1
+#include <iostream>
+#include <string>
+using namespace std;
 
 class INodo {
     public:
@@ -15,4 +16,3 @@ class INodo {
         int id;
 };
 
-#endif

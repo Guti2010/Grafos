@@ -1,44 +1,17 @@
-#ifndef _ARCO_
-#define _ARCO_ 1
-
 #include "INodo.h"
-
+#include <iostream>
+#include <string>
 using namespace std;
 
-class Arco
-{
-private:
-    void *origen;
-    void *destino;
+class Arco {
+  public:
+    NodoGrafo* origen;
+    NodoGrafo* destino;
     int peso;
-
-public:
-    Arco(void *pOrigen, void *pDestino, int pPeso)
-    {
-        this->origen = pOrigen;
-        this->destino = pDestino;
-        this->peso = pPeso;
-    }
-
-    Arco(void *pOrigen, void *pDestino)
-    {
-        this(pOrigen, pDestino, 0);
-    }
-
-    void *getOrigen()
-    {
-        return this->origen;
-    }
-
-    void *getDestino()
-    {
-        return this->destino;
-    }
-
-    int getPeso()
-    {
-        return this->peso;
+    
+    Arco(NodoGrafo* pOrigen, NodoGrafo* pDestino, int pPeso){
+      origen = pOrigen;
+      destino = pDestino;
+      peso = pPeso;
     }
 };
-
-#endif
