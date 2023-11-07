@@ -1,17 +1,39 @@
-#include "INodo.h"
-#include <iostream>
-#include <string>
+#ifndef _ARCO_
+#define _ARCO_ 1
+
+#include "NodoGrafo.h"
+
 using namespace std;
 
-class Arco {
-  public:
-    NodoGrafo* origen;
-    NodoGrafo* destino;
+class Arco
+{
+private:
+    void *origen;
+    void *destino;
     int peso;
-    
-    Arco(NodoGrafo* pOrigen, NodoGrafo* pDestino, int pPeso){
-      origen = pOrigen;
-      destino = pDestino;
-      peso = pPeso;
+
+public:
+    Arco(void *pOrigen, void *pDestino, int pPeso)
+    {
+        this->origen = pOrigen;
+        this->destino = pDestino;
+        this->peso = pPeso;
+    }
+
+    void *getOrigen()
+    {
+        return this->origen;
+    }
+
+    void *getDestino()
+    {
+        return this->destino;
+    }
+
+    int getPeso()
+    {
+        return this->peso;
     }
 };
+
+#endif

@@ -1,30 +1,47 @@
+#ifndef _PUERTO_
+#define _PUERTO_ 1
 
-#include <iostream>
 #include <string>
 #include "NodoGrafo.h"
 
 using namespace std;
 
 class PuertoMaritimo : public NodoGrafo {
-
-  public:
+private:
     string nombre;
     string ciudad;
+    int capacidad;
 
-    PuertoMaritimo(string nombre, string ciudad, int id) : NodoGrafo(id) {
-      this->nombre = nombre;
-      this->ciudad = ciudad; 
+public:
+    PuertoMaritimo(string nombre, string ciudad, int capacidad, int id) : NodoGrafo(id) {
+        this->nombre = nombre;
+        this->ciudad = ciudad;
+        this->capacidad= capacidad;
     }
 
-    string getNombre() {
-      return nombre;
+    string getNombre() const {
+        return nombre;
     }
 
-    string getCiudad() {
-      return ciudad;
+    void setNombre(const string& value) {
+        nombre = value;
     }
 
+    string getCiudad() const {
+        return ciudad;
+    }
+
+    void setCiudad(const string& value) {
+        ciudad = value;
+    }
+
+    int getCapacidad(){
+        return capacidad;
+    }
+
+    void setCapacidad(int capacidad){
+        this->capacidad = capacidad;
+    }
 };
 
-
-
+#endif
